@@ -13,8 +13,26 @@
 #include <algorithm>
 #include <unordered_set>
 #include <cstdint>
+#include <unordered_map>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <codecvt> // For UTF conversion
+#include <locale>  // For wstring_convert (deprecated but portable)
+
 #include "ImageRenderer.h"
 using namespace std;
+namespace std
+{
+    template <>
+    struct hash<std::array<size_t, 3>>
+    {
+        size_t operator()(const std::array<size_t, 3> &a) const
+        {
+            return a[0] ^ (a[1] << 1) ^ (a[2] << 2);
+        }
+    };
+}
 class PixelCrypt
 {
 
@@ -25,9 +43,33 @@ public:
     image imgKey;
     // std::vector<std::vector<char32_t>> charGrid;
     std::vector<std::vector<Color>> colorGrid;
+
+    std::unordered_map<std::array<size_t, 3>, std::array<size_t, 2>> table;
+
     PixelCrypt()
     {
         generateKey();
+    }
+
+    PixelCrypt(image Key, image Data)
+    {
+        imgData = Data;
+        imgKey = Key;
+
+        colorGrid = imgKey.getPixels();
+        constructTable();
+    }
+
+    void constructTable()
+    {
+        for (size_t i = 0; i < colorGrid.size(); i++)
+        {
+            for (size_t j = 0; j < colorGrid[i].size(); j++)
+            {
+                const Color &color = colorGrid[i][j];
+                table[{color.getR(), color.getG(), color.getB()}] = {i, j};
+            }
+        }
     }
 
     bool areAllColorsUnique(const std::vector<std::vector<Color>> &grid)
@@ -101,6 +143,7 @@ public:
         cout << "size :" << 1113 * 1001 << endl;
         // charGrid = std::vector<std::vector<char32_t>>(WH[1], std::vector<char32_t>(WH[0]));
         colorGrid = std::vector<std::vector<Color>>(WH[1], std::vector<Color>(WH[0]));
+        table.reserve(colorGrid.size() * colorGrid[0].size());
         cout << dec << WH[0] << "  " << WH[1] << endl;
         imgKey = image(WH[1], WH[0]);
 
@@ -123,6 +166,7 @@ public:
                 }
                 */
                 colorGrid[i][j] = colorPool[increment++];
+
                 imgKey.set(i, j, colorGrid[i][j]);
             }
         }
@@ -207,5 +251,36 @@ public:
         // printGrid(grid);
         // printGridChar(grid);
         ImageRenderer::WriteBMP(imgData, "Data.bmp");
+    }
+
+    std::u32string reconstructSourceString()
+    {
+
+        if (table.size() == 0)
+        {
+            constructTable();
+        }
+
+        std::u32string text;
+
+        for (size_t i = 0; i < colorGrid.size(); i++)
+        {
+            for (size_t j = 0; j < colorGrid.at(i).size(); j++)
+            {
+
+                Color tempC = imgData.get(i, j);
+                array<size_t, 2> indexes = table[{tempC.getR(), tempC.getG(), tempC.getB()}];
+
+                size_t row = indexes.at(0);
+                size_t col = indexes.at(1);
+                size_t width = colorGrid[0].size(); // width = columns
+                size_t index = row * width + col;
+
+                char32_t ch = static_cast<char32_t>(index);
+                text += ch;
+            }
+        }
+
+        return text;
     }
 };

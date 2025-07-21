@@ -153,13 +153,79 @@ void generateKey()
     // printGridChar(grid);
     // printGridColor(colorGrid);
 }
+
+std::u32string loadUTF32FromFile(const std::string &filename)
+{
+    std::ifstream file(filename);
+    if (!file)
+    {
+        throw std::runtime_error("Failed to open file: " + filename);
+    }
+
+    std::string utf8Text((std::istreambuf_iterator<char>(file)),
+                         std::istreambuf_iterator<char>());
+
+    std::wstring_convert<std::codecvt_utf8<char32_t>, char32_t> converter;
+    return converter.from_bytes(utf8Text);
+}
+
+void saveUTF32ToFile(const std::u32string &text, const std::string &filename)
+{
+    std::wstring_convert<std::codecvt_utf8<char32_t>, char32_t> converter;
+    std::string utf8Text = converter.to_bytes(text);
+
+    std::ofstream file(filename);
+    if (!file)
+    {
+        throw std::runtime_error("Failed to open file: " + filename);
+    }
+
+    file << utf8Text;
+}
+
 void testPixelCrypt()
 {
+    std::u32string text;
+    try
+    {
+        text = loadUTF32FromFile("srcFile.txt");
+        std::cout << "First char code: " << static_cast<uint32_t>(text[0]) << '\n';
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    if (text.size() == 0)
+    {
+        cerr << "Loading the file failed !" << endl;
+        return;
+    }
+
+    saveUTF32ToFile(text, "output.txt");
+
+    for (size_t i = 0; i < 0; i++)
+    {
+        text += U"Hello 🌍🌟🚀🔥🎉 你好 мир 🌈✨💡🧠💻📚📦⚙️📝🔐🎨♻️🧪🧬🔢🧊🎮🥽🍕🥑🚴‍♂️🏔️📷🎧🕹️🗺️🌌🚧🔭🪐💬🕰️👾🐍🦾⛩️🌪️🧘‍♂️⚡🔋🛰️🤖∞∑λ∫πΩ≠≈√∇";
+    }
     PixelCrypt pc;
-    std::u32string text = U"Hello 🌍🌟🚀🔥🎉 你好 мир 🌈✨💡🧠💻📚📦⚙️📝🔐🎨♻️🧪🧬🔢🧊🎮🥽🍕🥑🚴‍♂️🏔️📷🎧🕹️🗺️🌌🚧🔭🪐💬🕰️👾🐍🦾⛩️🌪️🧘‍♂️⚡🔋🛰️🤖∞∑λ∫πΩ≠≈√∇";
 
     // pc.printGridColor();
     pc.processsString(text);
+
+    std::vector<std::vector<Color>> colorGrid;
+
+    image tempData = ImageRenderer::ReadBMP("Data.bmp");
+
+    cout << "Data : " << tempData.size() << endl;
+
+    image tempKey = ImageRenderer::ReadBMP("Key.bmp");
+    cout << "Key : " << tempKey.size() << endl;
+
+    /*
+    PixelCrypt pc1(tempKey, tempData);
+
+    std::u32string text1 = pc1.reconstructSourceString();
+    */
 }
 
 int main()

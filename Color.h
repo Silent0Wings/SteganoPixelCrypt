@@ -45,4 +45,9 @@ public:
         os << "(" << +color.rgb[0] << ", " << +color.rgb[1] << ", " << +color.rgb[2] << ")";
         return os;
     }
+
+    bool operator==(const Color &other) const
+    {
+        return rgb == other.rgb;
+    }
 };
