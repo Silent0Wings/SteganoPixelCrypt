@@ -159,19 +159,21 @@ vector<Color> generatUniquetriplets(const size_t size)
     }
 
     if (hasDuplicate)
+    {
         std::cout << "Duplicate found\n";
+        throw std::runtime_error("Duplicate found");
+    }
     else
     {
         std::cout << "All values are unique\n";
         return ColorPool;
     }
-    return {};
 }
 void generateKey()
 {
     std::array<size_t, 2> WH = {1113, 1001};
     cout << dec << WH[0] << "  " << WH[1] << endl;
-
+    cout << "size :" << 1113 * 1001 << endl;
     std::vector<std::vector<char32_t>> grid(WH[1], std::vector<char32_t>(WH[0]));
     std::vector<std::vector<Color>> colorGrid(WH[1], std::vector<Color>(WH[0]));
     std::vector<Color> colorPool = generatUniquetriplets(1113 * 1001);
@@ -194,7 +196,7 @@ void generateKey()
 
     // printGrid(grid);
     // printGridChar(grid);
-    printGridColor(colorGrid);
+    // printGridColor(colorGrid);
 }
 
 int main()
@@ -207,8 +209,9 @@ int main()
     cout << "---------" << endl;
     charVector();
     cout << "---------" << endl;
+    generatUniquetriplets(10);
+    cout << "---------" << endl;
     generateKey();
     cout << "---------" << endl;
-    // generatUniquetriplets(10);
     return 0;
 }
