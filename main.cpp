@@ -1,19 +1,5 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <array>
-#include <cmath>
-#include <iomanip>
-#include <sstream>
-#include <locale>
-#include <codecvt>
-#include <random>
-#include <algorithm>
-#include <unordered_set>
-#include <cstdint>
-#include "Color.cpp"
 
-const size_t UnicodeRange = 1114111;
+#include "PixelCrypt.cpp"
 
 using namespace std;
 
@@ -115,60 +101,29 @@ void charVector()
     printGrid(grid);
     printGridChar(grid);
 }
-vector<Color> generatUniquetriplets(const size_t size)
+std::vector<Color> generateUniqueTriplets(size_t size)
 {
-    /*
-    Choose how many groups of 3 numbers you want.
+    std::unordered_set<uint32_t> used;
+    std::vector<Color> pool;
+    std::mt19937 rng(std::random_device{}());
+    std::uniform_int_distribution<int> dist(0, 255);
 
-    Make a list of random numbers (no repeats).
-
-    Mix the list.
-
-    Split into groups of 3.
-
-    Check if any number shows up twice.
-
-    Show the groups and say if there's a repeat.
-    */
-
-    vector<Color> ColorPool;
-    const int tripletCount = size;
-    const int totalNeeded = tripletCount * 3;
-
-    std::vector<int> pool;
-    for (int i = 1; i <= totalNeeded; ++i)
-        pool.push_back(i);
-
-    std::shuffle(pool.begin(), pool.end(), std::mt19937{std::random_device{}()});
-
-    std::unordered_set<int> seen;
-    bool hasDuplicate = false;
-
-    for (int i = 0; i < tripletCount; ++i)
+    while (pool.size() < size)
     {
-        int a = pool[i * 3];
-        int b = pool[i * 3 + 1];
-        int c = pool[i * 3 + 2];
+        int r = dist(rng);
+        int g = dist(rng);
+        int b = dist(rng);
 
-        if (!seen.insert(a).second || !seen.insert(b).second || !seen.insert(c).second)
-        {
-            hasDuplicate = true;
-        }
-        ColorPool.push_back(Color(a, b, c));
-        // std::cout  << "{" << a << "," << b << "," << c << "}\n";
+        uint32_t hash = (r << 16) | (g << 8) | b;
+
+        if (used.insert(hash).second) // Only insert if unique
+            pool.emplace_back(r, g, b);
     }
 
-    if (hasDuplicate)
-    {
-        std::cout << "Duplicate found\n";
-        throw std::runtime_error("Duplicate found");
-    }
-    else
-    {
-        std::cout << "All values are unique\n";
-        return ColorPool;
-    }
+    std::cout << "All values are unique\n";
+    return pool;
 }
+
 void generateKey()
 {
     std::array<size_t, 2> WH = {1113, 1001};
@@ -176,7 +131,7 @@ void generateKey()
     cout << "size :" << 1113 * 1001 << endl;
     std::vector<std::vector<char32_t>> grid(WH[1], std::vector<char32_t>(WH[0]));
     std::vector<std::vector<Color>> colorGrid(WH[1], std::vector<Color>(WH[0]));
-    std::vector<Color> colorPool = generatUniquetriplets(1113 * 1001);
+    std::vector<Color> colorPool = generateUniqueTriplets((size_t)(1113 * 1001));
     size_t increment = 0;
     for (size_t i = 0; i < WH[1]; i++)
     {
@@ -198,9 +153,18 @@ void generateKey()
     // printGridChar(grid);
     // printGridColor(colorGrid);
 }
+void testPixelCrypt()
+{
+    PixelCrypt pc;
+    std::u32string text = U"Hello 🌍🌟🚀🔥🎉 你好 мир 🌈✨💡🧠💻📚📦⚙️📝🔐🎨♻️🧪🧬🔢🧊🎮🥽🍕🥑🚴‍♂️🏔️📷🎧🕹️🗺️🌌🚧🔭🪐💬🕰️👾🐍🦾⛩️🌪️🧘‍♂️⚡🔋🛰️🤖∞∑λ∫πΩ≠≈√∇";
+
+    // pc.printGridColor();
+    pc.processsString(text);
+}
 
 int main()
 {
+    /*
     decimalUniCode();
     cout << "---------" << endl;
     charToUnicode();
@@ -212,6 +176,9 @@ int main()
     generatUniquetriplets(10);
     cout << "---------" << endl;
     generateKey();
+    cout << "---------" << endl;
+    */
+    testPixelCrypt();
     cout << "---------" << endl;
     return 0;
 }
