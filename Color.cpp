@@ -37,6 +37,12 @@ public:
     // Print color
     void print() const
     {
-        std::cout << "RGB(" << +rgb[0] << ", " << +rgb[1] << ", " << +rgb[2] << ")\n";
+        std::cout << "(" << +rgb[0] << ", " << +rgb[1] << ", " << +rgb[2] << ")\n";
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, const Color &color)
+    {
+        os << "(" << +color.rgb[0] << ", " << +color.rgb[1] << ", " << +color.rgb[2] << ")";
+        return os;
     }
 };

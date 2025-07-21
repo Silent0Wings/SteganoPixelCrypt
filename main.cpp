@@ -63,6 +63,17 @@ void printGrid(const std::vector<std::vector<char32_t>> &grid)
         std::cout << '\n';
     }
 }
+void printGridColor(const std::vector<std::vector<Color>> &grid)
+{
+    for (const auto &row : grid)
+    {
+        for (const auto &ch : row)
+        {
+            std::cout << std::setw(10) << ch; // 4-space column
+        }
+        std::cout << '\n';
+    }
+}
 void printGridChar(const std::vector<std::vector<char32_t>> &grid)
 {
     std::wstring_convert<std::codecvt_utf8<char32_t>, char32_t> convert;
@@ -104,34 +115,7 @@ void charVector()
     printGrid(grid);
     printGridChar(grid);
 }
-void generateKey()
-{
-    std::array<size_t, 2> WH = {1113, 1001};
-    cout << dec << WH[0] << "  " << WH[1] << endl;
-
-    std::vector<std::vector<char32_t>> grid(WH[1], std::vector<char32_t>(WH[0]));
-
-    size_t increment = 0;
-    for (size_t i = 0; i < WH[1]; i++)
-    {
-        for (size_t j = 0; j < WH[0]; j++)
-        {
-            if (increment <= 1114111)
-            {
-                grid[i][j] = increment++;
-            }
-            else
-            {
-                grid[i][j] = 0;
-            }
-        }
-    }
-
-    printGrid(grid);
-    printGridChar(grid);
-}
-
-void generatUniquetriplets()
+vector<Color> generatUniquetriplets(const size_t size)
 {
     /*
     Choose how many groups of 3 numbers you want.
@@ -146,7 +130,9 @@ void generatUniquetriplets()
 
     Show the groups and say if there's a repeat.
     */
-    const int tripletCount = 100;
+
+    vector<Color> ColorPool;
+    const int tripletCount = size;
     const int totalNeeded = tripletCount * 3;
 
     std::vector<int> pool;
@@ -168,15 +154,49 @@ void generatUniquetriplets()
         {
             hasDuplicate = true;
         }
-
-        std::cout << "{" << a << "," << b << "," << c << "}\n";
+        ColorPool.push_back(Color(a, b, c));
+        // std::cout  << "{" << a << "," << b << "," << c << "}\n";
     }
 
     if (hasDuplicate)
         std::cout << "Duplicate found\n";
     else
+    {
         std::cout << "All values are unique\n";
+        return ColorPool;
+    }
+    return {};
 }
+void generateKey()
+{
+    std::array<size_t, 2> WH = {1113, 1001};
+    cout << dec << WH[0] << "  " << WH[1] << endl;
+
+    std::vector<std::vector<char32_t>> grid(WH[1], std::vector<char32_t>(WH[0]));
+    std::vector<std::vector<Color>> colorGrid(WH[1], std::vector<Color>(WH[0]));
+    std::vector<Color> colorPool = generatUniquetriplets(1113 * 1001);
+    size_t increment = 0;
+    for (size_t i = 0; i < WH[1]; i++)
+    {
+        for (size_t j = 0; j < WH[0]; j++)
+        {
+            if (increment <= 1114111)
+            {
+                grid[i][j] = increment++;
+            }
+            else
+            {
+                grid[i][j] = 0;
+            }
+            colorGrid[i][j] = colorPool[increment];
+        }
+    }
+
+    // printGrid(grid);
+    // printGridChar(grid);
+    printGridColor(colorGrid);
+}
+
 int main()
 {
     decimalUniCode();
@@ -187,8 +207,8 @@ int main()
     cout << "---------" << endl;
     charVector();
     cout << "---------" << endl;
-    // generateKey();
+    generateKey();
     cout << "---------" << endl;
-    generatUniquetriplets();
+    // generatUniquetriplets(10);
     return 0;
 }
