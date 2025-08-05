@@ -228,6 +228,44 @@ void testPixelCrypt()
     */
 }
 
+void testPixelCryptBook()
+{
+    std::u32string text;
+    try
+    {
+        text = loadUTF32FromFile("./Book/The_Complete_Works_of_William_Shakespeare_by_William_Shakespeare.txt");
+        std::cout << "First char code: " << static_cast<uint32_t>(text[0]) << '\n';
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    if (text.size() == 0)
+    {
+        cerr << "Loading the file failed !" << endl;
+        return;
+    }
+
+    PixelCrypt pc;
+
+    // pc.printGridColor();
+    pc.processsString(text);
+
+    std::vector<std::vector<Color>> colorGrid;
+
+    image tempData = ImageRenderer::ReadBMP("Data.bmp");
+
+    cout << "Data : " << tempData.size() << endl;
+
+    image tempKey = ImageRenderer::ReadBMP("Key.bmp");
+    cout << "Key : " << tempKey.size() << endl;
+
+    /*
+    PixelCrypt pc1(tempKey, tempData);
+
+    std::u32string text1 = pc1.reconstructSourceString();
+    */
+}
 int main()
 {
     /*
@@ -243,8 +281,17 @@ int main()
     cout << "---------" << endl;
     generateKey();
     cout << "---------" << endl;
-    */
     testPixelCrypt();
+    */
+    cout << "---------" << endl;
+    testPixelCryptBook();
     cout << "---------" << endl;
     return 0;
 }
+
+/*
+cls
+rm main.exe
+g++ -std=c++17 -o main main.cpp -Wall
+./main.exe
+*/
