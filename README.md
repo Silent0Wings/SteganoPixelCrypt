@@ -31,9 +31,8 @@ A minimal example showing how to load a UTF-32 text file and convert it into an 
 #include "PixelCrypt.h"
 
 int main() {
-    std::u32string text;
+    std::u32string text = loadUTF32FromFile("./Book/Universal_Declaration_of_Human_Rights.txt");
 
-    text = loadUTF32FromFile("./Book/Universal_Declaration_of_Human_Rights.txt");
     std::cout << "First char code: " << static_cast<uint32_t>(text[0]) << '\n';
 
     PixelCrypt pc;
