@@ -266,6 +266,19 @@ void testPixelCryptBook()
     std::u32string text1 = pc1.reconstructSourceString();
     */
 }
+
+void testPixelCryptBookWrite()
+{
+    std::u32string text;
+
+    text = loadUTF32FromFile("./Book/Universal_Declaration_of_Human_Rights.txt");
+    std::cout << "First char code: " << static_cast<uint32_t>(text[0]) << '\n';
+
+    PixelCrypt pc;
+
+    pc.processsString(text);
+}
+
 int main()
 {
     /*
@@ -282,10 +295,13 @@ int main()
     generateKey();
     cout << "---------" << endl;
     testPixelCrypt();
-    */
     cout << "---------" << endl;
     testPixelCryptBook();
+    */
     cout << "---------" << endl;
+    testPixelCryptBookWrite();
+    cout << "---------" << endl;
+
     return 0;
 }
 
