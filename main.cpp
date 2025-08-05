@@ -233,7 +233,7 @@ void testPixelCryptBook()
     std::u32string text;
     try
     {
-        text = loadUTF32FromFile("./Book/The_Complete_Works_of_William_Shakespeare_by_William_Shakespeare.txt");
+        text = loadUTF32FromFile("./Book/Universal_Declaration_of_Human_Rights.txt");
         std::cout << "First char code: " << static_cast<uint32_t>(text[0]) << '\n';
     }
     catch (const std::exception &e)
