@@ -20,6 +20,10 @@ Below are examples of famous texts and lyrics that have been visually encrypted 
 
 ---
 
+## Example Code
+
+A minimal example showing how to load a UTF-32 text file and convert it into an encrypted image using `PixelCrypt`:
+
 ```cpp
 #include <iostream>
 #include "PixelCrypt.h"
@@ -35,6 +39,8 @@ int main() {
     pc.processsString(text);
 }
 ```
+
+---
 
 ## File Structure
 
