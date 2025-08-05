@@ -1,13 +1,12 @@
 # PixelCipher
 
-PixelCipher is a C++ tool that encodes text into images by mapping characters to pixel colors. It provides a simple form of visual encryption, turning data into colored patterns that can be decoded back to text. Lightweight, fast, and ideal for basic steganography.
-
+PixelCipher is a C++ tool that encodes text into images by mapping characters to pixel colors. It provides a simple form of visual encryption, turning data into colored patterns that can be decoded back to text. Lightweight, fast, and ideal for basic [steganography](https://en.wikipedia.org/wiki/Steganography) .
 
 ---
 
 ## Example Code
 
-A minimal example showing how to load a UTF-32 text file and convert it into an encrypted image using `PixelCrypt`:
+A minimal example showing how to load a [UTF-32 ](https://en.wikipedia.org/wiki/UTF-32) text file and convert it into an encrypted image using `PixelCrypt`:
 
 ```cpp
 #include <iostream>
@@ -18,7 +17,7 @@ int main() {
 
     PixelCrypt pc;
 
-    pc.processsString(text);
+    pc.processsString(text); // outputs the resulting images in the same folder as the source text 
 }
 ```
 
