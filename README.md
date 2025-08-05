@@ -27,16 +27,16 @@ int main() {
 
 Below are examples of famous texts and lyrics that have been visually encrypted using PixelCipher. Each entry includes the source and its corresponding `Data.bmp` output.
 
-| Title                                      | Author              | Encrypted Image                                                                          |
+| Title                                      | Author/Source       | Encrypted Image                                                                          |
 | ------------------------------------------ | ------------------- | ---------------------------------------------------------------------------------------- |
-| Moby Dick                                  | Herman Melville     | <img src="Data/images/Moby_Dick_Converted.png" width="450"/>                                  |
-| Dracula                                    | Bram Stoker         | <img src="Data/Book/Dracula/Data.bmp" width="450"/>                                           |
-| The Adventures of Sherlock Holmes          | Arthur Conan Doyle  | <img src="Data/Book/Sherlock_Holmes/Data.bmp" width="450"/>                                   |
-| Relativity: The Special and General Theory | Albert Einstein     | <img src="Data/Book/the_Special_and_General_Theory_by_Albert_Einstein/Data.bmp" width="450"/> |
-| The Complete Works of William Shakespeare  | William Shakespeare | <img src="Data/Book/William_Shakespeare/Data.bmp" width="450"/>                               |
-| DNA Paramecium bursaria Chlorella virus    | ncbi                | <img src="Data/Dna/Chlorella_virus/Data.bmp" width="450"/>                                    |
-| Universal Declaration of Human Rights      | United Nations      | <img src="Data/Book/Universal_Declaration_of_Human_Rights/Data.bmp" width="450"/>             |
-| Bohemian Rhapsody (Lyrics)                 | Queen               | <img src="Data/Song/Bohemian Rhapsody/Data.bmp" width="450"/>                                 |
+| [Moby Dick](https://www.gutenberg.org/ebooks/2701)                        | Herman Melville     | <img src="Data/images/Moby_Dick_Converted.png" width="450"/>                            |
+| [Dracula](https://www.gutenberg.org/files/345/345-h/345-h.htm)           | Bram Stoker         | <img src="Data/Book/Dracula/Data.bmp" width="450"/>                                     |
+| [The Adventures of Sherlock Holmes](https://www.gutenberg.org/cache/epub/1661/pg1661.txt) | Arthur Conan Doyle  | <img src="Data/Book/Sherlock_Holmes/Data.bmp" width="450"/>                             |
+| [Relativity: The Special and General Theory](https://www.gutenberg.org/ebooks/5001) | Albert Einstein     | <img src="Data/Book/the_Special_and_General_Theory_by_Albert_Einstein/Data.bmp" width="450"/> |
+| [The Complete Works of William Shakespeare](https://www.gutenberg.org/cache/epub/100/pg100.txt) | William Shakespeare | <img src="Data/Book/William_Shakespeare/Data.bmp" width="450"/>                         |
+| [PBCV‑1 genome (NC_000852.5)](https://www.ncbi.nlm.nih.gov/nuccore/NC_000852.5) | *Paramecium bursaria* Chlorella virus 1 | <img src="Data/Dna/Chlorella_virus/Data.bmp" width="450"/>                              |
+| [Universal Declaration of Human Rights](https://www.un.org/en/about-us/universal-declaration-of-human-rights) | United Nations      | <img src="Data/Book/Universal_Declaration_of_Human_Rights/Data.bmp" width="450"/>       |
+| [Bohemian Rhapsody (Lyrics)](https://genius.com/Queen-bohemian-rhapsody-lyrics) | Queen               | <img src="Data/Song/Bohemian Rhapsody/Data.bmp" width="450"/>                           |
 
 
 ---
