@@ -271,7 +271,7 @@ void testPixelCryptBookWrite()
 {
     std::u32string text;
 
-    text = loadUTF32FromFile("./Book/Universal_Declaration_of_Human_Rights.txt");
+    text = loadUTF32FromFile("./Paramecium bursaria Chlorella virus.txt");
     std::cout << "First char code: " << static_cast<uint32_t>(text[0]) << '\n';
 
     PixelCrypt pc;
