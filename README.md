@@ -14,8 +14,9 @@ Below are examples of famous texts and lyrics that have been visually encrypted 
 | Dracula                                    | Bram Stoker         | <img src="Book/Dracula/Data.bmp" width="250"/>                                           |
 | The Adventures of Sherlock Holmes          | Arthur Conan Doyle  | <img src="Book/Sherlock_Holmes/Data.bmp" width="250"/>                                   |
 | Relativity: The Special and General Theory | Albert Einstein     | <img src="Book/the_Special_and_General_Theory_by_Albert_Einstein/Data.bmp" width="250"/> |
-| Universal Declaration of Human Rights      | United Nations      | <img src="Book/Universal_Declaration_of_Human_Rights/Data.bmp" width="250"/>             |
 | The Complete Works of William Shakespeare  | William Shakespeare | <img src="Book/William_Shakespeare/Data.bmp" width="250"/>                               |
+| Paramecium bursaria Chlorella virus        | ncbi               | <img src="Dna/Chlorella_virus/Data.bmp" width="250"/>                                 |
+| Universal Declaration of Human Rights      | United Nations      | <img src="Book/Universal_Declaration_of_Human_Rights/Data.bmp" width="250"/>             |
 | Bohemian Rhapsody (Lyrics)                 | Queen               | <img src="Song/Bohemian Rhapsody/Data.bmp" width="250"/>                                 |
 
 ---
