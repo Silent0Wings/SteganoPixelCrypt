@@ -2,23 +2,6 @@
 
 PixelCipher is a C++ tool that encodes text into images by mapping characters to pixel colors. It provides a simple form of visual encryption, turning data into colored patterns that can be decoded back to text. Lightweight, fast, and ideal for basic steganography.
 
----
-
-## Encrypted Works
-
-Below are examples of famous texts and lyrics that have been visually encrypted using PixelCipher. Each entry includes the source and its corresponding `Data.bmp` output.
-
-| Title                                      | Author              | Encrypted Image                                                                          |
-| ------------------------------------------ | ------------------- | ---------------------------------------------------------------------------------------- |
-| Moby Dick                                  | Herman Melville     | <img src="Data/images/Moby_Dick_Converted.png" width="450"/>                                  |
-| Dracula                                    | Bram Stoker         | <img src="Data/Book/Dracula/Data.bmp" width="450"/>                                           |
-| The Adventures of Sherlock Holmes          | Arthur Conan Doyle  | <img src="Data/Book/Sherlock_Holmes/Data.bmp" width="450"/>                                   |
-| Relativity: The Special and General Theory | Albert Einstein     | <img src="Data/Book/the_Special_and_General_Theory_by_Albert_Einstein/Data.bmp" width="450"/> |
-| The Complete Works of William Shakespeare  | William Shakespeare | <img src="Data/Book/William_Shakespeare/Data.bmp" width="450"/>                               |
-| Paramecium bursaria Chlorella virus        | ncbi                | <img src="Data/Dna/Chlorella_virus/Data.bmp" width="450"/>                                    |
-| Universal Declaration of Human Rights      | United Nations      | <img src="Data/Book/Universal_Declaration_of_Human_Rights/Data.bmp" width="450"/>             |
-| Bohemian Rhapsody (Lyrics)                 | Queen               | <img src="Data/Song/Bohemian Rhapsody/Data.bmp" width="450"/>                                 |
-
 
 ---
 
@@ -38,6 +21,24 @@ int main() {
     pc.processsString(text);
 }
 ```
+
+---
+
+## Encrypted Works
+
+Below are examples of famous texts and lyrics that have been visually encrypted using PixelCipher. Each entry includes the source and its corresponding `Data.bmp` output.
+
+| Title                                      | Author              | Encrypted Image                                                                          |
+| ------------------------------------------ | ------------------- | ---------------------------------------------------------------------------------------- |
+| Moby Dick                                  | Herman Melville     | <img src="Data/images/Moby_Dick_Converted.png" width="450"/>                                  |
+| Dracula                                    | Bram Stoker         | <img src="Data/Book/Dracula/Data.bmp" width="450"/>                                           |
+| The Adventures of Sherlock Holmes          | Arthur Conan Doyle  | <img src="Data/Book/Sherlock_Holmes/Data.bmp" width="450"/>                                   |
+| Relativity: The Special and General Theory | Albert Einstein     | <img src="Data/Book/the_Special_and_General_Theory_by_Albert_Einstein/Data.bmp" width="450"/> |
+| The Complete Works of William Shakespeare  | William Shakespeare | <img src="Data/Book/William_Shakespeare/Data.bmp" width="450"/>                               |
+| Paramecium bursaria Chlorella virus        | ncbi                | <img src="Data/Dna/Chlorella_virus/Data.bmp" width="450"/>                                    |
+| Universal Declaration of Human Rights      | United Nations      | <img src="Data/Book/Universal_Declaration_of_Human_Rights/Data.bmp" width="450"/>             |
+| Bohemian Rhapsody (Lyrics)                 | Queen               | <img src="Data/Song/Bohemian Rhapsody/Data.bmp" width="450"/>                                 |
+
 
 ---
 
