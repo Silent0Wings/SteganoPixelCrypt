@@ -34,6 +34,7 @@ Below are examples of famous texts and lyrics that have been visually encrypted 
 | [The Adventures of Sherlock Holmes](https://www.gutenberg.org/cache/epub/1661/pg1661.txt) | Arthur Conan Doyle  | <img src="assets/Book/Sherlock_Holmes/Data.bmp" width="450"/>                             |
 | [Relativity: The Special and General Theory](https://www.gutenberg.org/ebooks/5001) | Albert Einstein     | <img src="assets/Book/the_Special_and_General_Theory_by_Albert_Einstein/Data.bmp" width="450"/> |
 | [The Complete Works of William Shakespeare](https://www.gutenberg.org/cache/epub/100/pg100.txt) | William Shakespeare | <img src="assets/Book/William_Shakespeare/Data.bmp" width="450"/>                         |
+| [Homo sapiens DNA](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/9606/) | ncbi | <img src="assets/Dna/Homo_sapiens_Dna/reduced_Homo_sapiens_Dna.png" width="450"/>                              |
 | [PBCV‑1 genome (NC_000852.5)](https://www.ncbi.nlm.nih.gov/nuccore/NC_000852.5) | *Paramecium bursaria* Chlorella virus 1 | <img src="assets/Dna/Chlorella_virus/Data.bmp" width="450"/>                              |
 | [Universal Declaration of Human Rights](https://www.un.org/en/about-us/universal-declaration-of-human-rights) | United Nations      | <img src="assets/Book/Universal_Declaration_of_Human_Rights/Data.bmp" width="450"/>       |
 | [Bohemian Rhapsody (Lyrics)](https://genius.com/Queen-bohemian-rhapsody-lyrics) | Queen               | <img src="assets/Song/Bohemian Rhapsody/Data.bmp" width="450"/>                           |
