@@ -271,7 +271,7 @@ void testPixelCryptBookWrite()
 {
     std::u32string text;
 
-    text = loadUTF32FromFile("./Paramecium bursaria Chlorella virus.txt");
+    text = loadUTF32FromFile("../assets/Dna/cds_from_genomic.fna");
     std::cout << "First char code: " << static_cast<uint32_t>(text[0]) << '\n';
 
     PixelCrypt pc;
