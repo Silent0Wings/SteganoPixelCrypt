@@ -36,23 +36,24 @@ int main() {
 
 ## Encrypted Works
 
-Below are examples of famous texts and lyrics that have been visually encrypted using PixelCipher. Each entry includes the source and its corresponding `Data.bmp` output.
+Below are examples of famous texts, songs, and sequences visually encrypted using **PixelCipher**.  
+Each entry includes a source link and its corresponding `Data.bmp` output.
 
-| Title                                      | Author/Source       | Encrypted Image                                                                          |
-| ------------------------------------------ | ------------------- | ---------------------------------------------------------------------------------------- |
-| [Moby Dick](https://www.gutenberg.org/ebooks/2701)                        | Herman Melville     | <img src="assets/images/Moby_Dick_Converted.png" width="450"/>                            |
-| [Dracula](https://www.gutenberg.org/files/345/345-h/345-h.htm)           | Bram Stoker         | <img src="assets/Book/Dracula/Data.bmp" width="450"/>                                     |
-| [The Adventures of Sherlock Holmes](https://www.gutenberg.org/cache/epub/1661/pg1661.txt) | Arthur Conan Doyle  | <img src="assets/Book/Sherlock_Holmes/Data.bmp" width="450"/>                             |
-| [Relativity: The Special and General Theory](https://www.gutenberg.org/ebooks/5001) | Albert Einstein     | <img src="assets/Book/the_Special_and_General_Theory_by_Albert_Einstein/Data.bmp" width="450"/> |
-| [The Complete Works of William Shakespeare](https://www.gutenberg.org/cache/epub/100/pg100.txt) | William Shakespeare | <img src="assets/Book/William_Shakespeare/Data.bmp" width="450"/>                         |
-| [Homo sapiens DNA](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/9606/) | ncbi | <img src="assets/Dna/Homo_sapiens_Dna/reduced_Homo_sapiens_Dna.png" width="450"/>                              |
-| [PBCV‑1 genome (NC_000852.5)](https://www.ncbi.nlm.nih.gov/nuccore/NC_000852.5) | *Paramecium bursaria* Chlorella virus 1 | <img src="assets/Dna/Chlorella_virus/Data.bmp" width="450"/>                              |
-| [1 Billion Digits of Pi](https://stuff.mit.edu/afs/sipb/contrib/pi/pi-billion.txt) | 1,000,000,000 Digits of π | <img src="assets/Math/Pi/Data.bmp" width="450"/> |
-| [Universal Declaration of Human Rights](https://www.un.org/en/about-us/universal-declaration-of-human-rights) | United Nations      | <img src="assets/Book/Universal_Declaration_of_Human_Rights/Data.bmp" width="450"/>       |
-| [Bohemian Rhapsody (Lyrics)](https://genius.com/Queen-bohemian-rhapsody-lyrics) | Queen               | <img src="assets/Song/Bohemian Rhapsody/Data.bmp" width="450"/>                           |
+| Title                                                                                   | Author/Source                                 | Encrypted Image                                                                 |
+|-----------------------------------------------------------------------------------------|-----------------------------------------------|----------------------------------------------------------------------------------|
+| [Moby Dick](https://www.gutenberg.org/ebooks/2701)                                      | Herman Melville                               | <img src="assets/images/Moby_Dick_Converted.png" width="450"/>                 |
+| [Dracula](https://www.gutenberg.org/files/345/345-h/345-h.htm)                          | Bram Stoker                                   | <img src="assets/Book/Dracula/Data.bmp" width="450"/>                          |
+| [The Adventures of Sherlock Holmes](https://www.gutenberg.org/cache/epub/1661/pg1661.txt)| Arthur Conan Doyle                            | <img src="assets/Book/Sherlock_Holmes/Data.bmp" width="450"/>                 |
+| [Relativity: The Special and General Theory](https://www.gutenberg.org/ebooks/5001)     | Albert Einstein                               | <img src="assets/Book/the_Special_and_General_Theory_by_Albert_Einstein/Data.bmp" width="450"/> |
+| [The Complete Works of William Shakespeare](https://www.gutenberg.org/cache/epub/100/pg100.txt) | William Shakespeare                    | <img src="assets/Book/William_Shakespeare/Data.bmp" width="450"/>             |
+| [Homo sapiens DNA](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/9606/)                | NCBI                                           | <img src="assets/Dna/Homo_sapiens_Dna/reduced_Homo_sapiens_Dna.png" width="450"/> |
+| [PBCV‑1 genome (NC_000852.5)](https://www.ncbi.nlm.nih.gov/nuccore/NC_000852.5)          | *Paramecium bursaria* Chlorella virus 1       | <img src="assets/Dna/Chlorella_virus/Data.bmp" width="450"/>                  |
+| [1 Billion Digits of Pi](https://stuff.mit.edu/afs/sipb/contrib/pi/pi-billion.txt)      | 1,000,000,000 Digits of π                      | <img src="assets/Math/Pi/Data.bmp" width="450"/>                              |
+| [Universal Declaration of Human Rights](https://www.un.org/en/about-us/universal-declaration-of-human-rights) | United Nations               | <img src="assets/Book/Universal_Declaration_of_Human_Rights/Data.bmp" width="450"/> |
+| [Bohemian Rhapsody (Lyrics)](https://genius.com/Queen-bohemian-rhapsody-lyrics)         | Queen                                          | <img src="assets/Song/Bohemian Rhapsody/Data.bmp" width="450"/>               |
 
-
-**Note:** All Data above are in the public domain except *Bohemian Rhapsody* by Queen, which remains under copyright. Use it for educational/demo purposes only.
+**Note:** All entries are in the public domain except *Bohemian Rhapsody* by Queen, which is copyrighted.  
+Use it for educational and demonstration purposes only.
 
 
 ---
