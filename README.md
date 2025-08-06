@@ -39,6 +39,9 @@ Below are examples of famous texts and lyrics that have been visually encrypted 
 | [Bohemian Rhapsody (Lyrics)](https://genius.com/Queen-bohemian-rhapsody-lyrics) | Queen               | <img src="assets/Song/Bohemian Rhapsody/Data.bmp" width="450"/>                           |
 
 
+**Note:** All Data above are in the public domain except *Bohemian Rhapsody* by Queen, which remains under copyright. Use it for educational/demo purposes only.
+
+
 ---
 
 ## To-Do (Future Features)
