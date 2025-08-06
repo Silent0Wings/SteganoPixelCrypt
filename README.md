@@ -1,6 +1,20 @@
 # PixelCipher
 
-PixelCipher is a C++ tool that encodes text into images by mapping characters to pixel colors. It provides a simple form of visual encryption, turning data into colored patterns that can be decoded back to text. Lightweight, fast, and ideal for basic [steganography](https://en.wikipedia.org/wiki/Steganography) .
+**PixelCipher** is a **C++** tool that encodes text into images by mapping characters to pixel colors.  
+It provides a simple form of visual encryption, turning data into colored patterns that can be decoded back to text.  
+**Lightweight**, **fast**, and ideal for basic [steganography](https://en.wikipedia.org/wiki/Steganography).
+
+It fully supports the entire **32-bit Unicode space** ([UTF-32](https://en.wikipedia.org/wiki/UTF-32)),  covering all **4,294,967,296 possible code points**: past, present, and future. This includes:
+
+- **Chinese**: 你, 爱, 学, 生  
+- **Japanese**: 日, 本, 語, 学  
+- **Arabic**: ع, م, ر, ب  
+- **Russian**: Ж, Д, Р, Я  
+- **Emojis**: 😊, 🚀, 🔥, 💡  
+- **Special symbols**: ∞, §, ©, ✓  
+- **Rare**, **private-use**, and **unassigned** code points
+
+
 
 ---
 
