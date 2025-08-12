@@ -1,6 +1,6 @@
-# PixelCipher
+# SteganoPixelCrypt
 
-**PixelCipher** is a **C++** tool that visually encrypts text by converting each character into a pixel color.  
+**SteganoPixelCrypt** is a **C++** tool that visually encrypts text by converting each character into a pixel color.  
 It transforms entire documents into colored patterns that can later be decoded back to the original content.  
 **Lightweight**, **fast**, and ideal for basic [steganography](https://en.wikipedia.org/wiki/Steganography).
 
