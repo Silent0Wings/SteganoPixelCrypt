@@ -1,5 +1,5 @@
 
-#include "PixelCrypt.cpp"
+#include "SteganoPixelCrypt.cpp"
 
 using namespace std;
 
@@ -183,7 +183,7 @@ void saveUTF32ToFile(const std::u32string &text, const std::string &filename)
     file << utf8Text;
 }
 
-void testPixelCrypt()
+void testSteganoPixelCrypt()
 {
     std::u32string text;
     try
@@ -207,7 +207,7 @@ void testPixelCrypt()
     {
         text += U"Hello 🌍🌟🚀🔥🎉 你好 мир 🌈✨💡🧠💻📚📦⚙️📝🔐🎨♻️🧪🧬🔢🧊🎮🥽🍕🥑🚴‍♂️🏔️📷🎧🕹️🗺️🌌🚧🔭🪐💬🕰️👾🐍🦾⛩️🌪️🧘‍♂️⚡🔋🛰️🤖∞∑λ∫πΩ≠≈√∇";
     }
-    PixelCrypt pc;
+    SteganoPixelCrypt pc;
 
     // pc.printGridColor();
     pc.processsString(text);
@@ -222,13 +222,13 @@ void testPixelCrypt()
     cout << "Key : " << tempKey.size() << endl;
 
     /*
-    PixelCrypt pc1(tempKey, tempData);
+    SteganoPixelCrypt pc1(tempKey, tempData);
 
     std::u32string text1 = pc1.reconstructSourceString();
     */
 }
 
-void testPixelCryptBook()
+void testSteganoPixelCryptBook()
 {
     std::u32string text;
     try
@@ -246,7 +246,7 @@ void testPixelCryptBook()
         return;
     }
 
-    PixelCrypt pc;
+    SteganoPixelCrypt pc;
 
     // pc.printGridColor();
     pc.processsString(text);
@@ -261,20 +261,20 @@ void testPixelCryptBook()
     cout << "Key : " << tempKey.size() << endl;
 
     /*
-    PixelCrypt pc1(tempKey, tempData);
+    SteganoPixelCrypt pc1(tempKey, tempData);
 
     std::u32string text1 = pc1.reconstructSourceString();
     */
 }
 
-void testPixelCryptBookWrite()
+void testSteganoPixelCryptBookWrite()
 {
     std::u32string text;
 
-    text = loadUTF32FromFile("../assets/Dna/cds_from_genomic.fna");
+    text = loadUTF32FromFile("../assets/Book/Dracula_by_Bram_Stoker.txt");
     std::cout << "First char code: " << static_cast<uint32_t>(text[0]) << '\n';
 
-    PixelCrypt pc;
+    SteganoPixelCrypt pc;
 
     pc.processsString(text);
 }
@@ -294,18 +294,19 @@ int main()
     cout << "---------" << endl;
     generateKey();
     cout << "---------" << endl;
-    testPixelCrypt();
+    testSteganoPixelCrypt();
     cout << "---------" << endl;
-    testPixelCryptBook();
+    testSteganoPixelCryptBook();
     */
     cout << "---------" << endl;
-    testPixelCryptBookWrite();
+    testSteganoPixelCryptBookWrite();
     cout << "---------" << endl;
 
     return 0;
 }
 
 /*
+cd ./src
 cls
 rm main.exe
 g++ -std=c++17 -o main main.cpp -Wall

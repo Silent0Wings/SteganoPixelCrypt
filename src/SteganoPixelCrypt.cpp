@@ -33,7 +33,7 @@ namespace std
         }
     };
 }
-class PixelCrypt
+class SteganoPixelCrypt
 {
 
 private:
@@ -46,12 +46,12 @@ public:
 
     std::unordered_map<std::array<size_t, 3>, std::array<size_t, 2>> table;
 
-    PixelCrypt()
+    SteganoPixelCrypt()
     {
         generateKey();
     }
 
-    PixelCrypt(image Key, image Data)
+    SteganoPixelCrypt(image Key, image Data)
     {
         imgData = Data;
         imgKey = Key;
