@@ -23,7 +23,7 @@ A minimal example showing how to load a [UTF-32](https://en.wikipedia.org/wiki/U
 and convert it into an encrypted image using `PixelCrypt`:
 
 ```cpp
-#include "PixelCrypt.h"
+#include "SteganoPixelCrypt.h"
 
 int main() {
     std::u32string text = loadUTF32FromFile("./Book/Universal_Declaration_of_Human_Rights.txt");
@@ -37,7 +37,7 @@ int main() {
 
 ## Encrypted Works
 
-Below are examples of famous texts, songs, and sequences visually encrypted using **PixelCipher**.  
+Below are examples of famous texts, songs, and sequences visually encrypted using **SteganoPixelCrypt**.  
 Each entry includes a source link and its corresponding `Data.bmp` output.
 
 | Title                                                                                   | Author/Source                                 | Encrypted Image                                                                 |
