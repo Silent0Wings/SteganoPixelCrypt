@@ -28,7 +28,7 @@ and convert it into an encrypted image using `PixelCrypt`:
 int main() {
     std::u32string text = loadUTF32FromFile("./Book/Universal_Declaration_of_Human_Rights.txt");
 
-    PixelCrypt pc;
+    SteganoPixelCrypt pc;
     pc.processString(text); // Outputs image(s) in the same folder as the source text
 }
 ```
