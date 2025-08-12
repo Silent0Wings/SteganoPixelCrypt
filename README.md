@@ -20,7 +20,7 @@ covering all **4,294,967,296 code points**, including:
 ## Example Code
 
 A minimal example showing how to load a [UTF-32](https://en.wikipedia.org/wiki/UTF-32) text file  
-and convert it into an encrypted image using `PixelCrypt`:
+and convert it into an encrypted image using `SteganoPixelCrypt`:
 
 ```cpp
 #include "SteganoPixelCrypt.h"
